@@ -1,2 +1,8 @@
-browserType = ch
-id = raj
+browser = Chrome
+url = "https://demoqa.com/"
+arg = "--remote-allow-origins=*"
+validText = Raj
+invalidText = eegerT34@^#&
+emailId = abc@test.com
+userName = raj123
+password = Raj@123
