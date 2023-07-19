@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="DQA_Suit">
+  <test thread-count="5" name="Dqa_Test">
+    <classes>
+      <class name="demoTestCases.DemoQATest"/><class name="demoTestCases.PracticeTest"><!--comment--></class>
+    </classes>
+  </test> <!-- Dqa_Test -->
+</suite> <!-- DQA_Suit-->
