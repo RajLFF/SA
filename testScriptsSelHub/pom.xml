@@ -3,8 +3,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>SelHubTestFramework</groupId>
-	<artifactId>testScripts</artifactId>
+	<groupId>MasterTestFramework</groupId>
+	<artifactId>MasterTestScripts</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>testScripts</name>
 	<!-- FIXME change it to the project's website -->
@@ -20,11 +20,11 @@
 
 	<dependencies>
 
-		<!-- selenium-java -->
+		<!-- Selenium-Java 4.11.0 Stable-->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.4.0</version>
+			<version>4.11.0</version>
 		</dependency>
 
 		<!-- testng -->
@@ -32,7 +32,7 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>7.7.1</version>
-			<scope>test</scope>
+			<scope>compile</scope>
 		</dependency>
 
 		<!-- Extentreport -->
@@ -46,7 +46,7 @@
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
-			<version>5.4.0</version>
+			<version>5.3.3</version>
 		</dependency>
 
 	</dependencies>
@@ -58,13 +58,13 @@
 			<!-- plugins versions to avoid using Maven defaults -->
 			<plugins>
 
-				<!-- clean lifecycle, See https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
+				<!-- Clean Lifecycle -->
 				<plugin>
 					<artifactId>maven-clean-plugin</artifactId>
 					<version>3.1.0</version>
 				</plugin>
 
-				<!-- default lifecycle -->
+				<!-- Default Lifecycle -->
 				<plugin>
 					<artifactId>maven-resources-plugin</artifactId>
 					<version>3.0.2</version>
@@ -95,7 +95,7 @@
 					<version>2.8.2</version>
 				</plugin>
 
-				<!-- site lifecycle -->
+				<!-- Site Lifecycle -->
 				<plugin>
 					<artifactId>maven-site-plugin</artifactId>
 					<version>3.7.1</version>

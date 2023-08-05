@@ -4,17 +4,20 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Iterator;
 import java.util.Properties;
+import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -22,66 +25,104 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class MasterObjects {
+public class MasterMethods {
 
 	WebDriver driverM;
-	Properties pr;
+	Properties prM;
 	Actions act;
 	WebDriverWait wait;
 
-	public WebDriver masterDriveInit() throws IOException {
+	public WebDriver masterDriveInit() {
 
-		act = new Actions(driverM);
-		wait = new WebDriverWait(driverM, Duration.ofSeconds(3));
-		pr = new Properties();
+		prM = masterPropFileData();
+		System.out.println("URL from Prop File ==> " + prM.getProperty("url"));
+		String browserType = prM.getProperty("browser");
 
-		File file = new File("\\user.dir" + "\\src\\main\\java\\repository" + "\\inputDataFile");
-		FileInputStream fis = new FileInputStream(file);
-		pr.load(fis);
-		String browserType = pr.getProperty("browser");
+		System.out.println("Launching Browser => " + browserType);
+		System.out.println("Launch Option => " + prM.getProperty("launchOpt"));
 
 		switch (browserType) {
 
 		case "FF":
-			FirefoxOptions fo = new FirefoxOptions();
-			fo.setHeadless(false);
-			fo.addArguments(pr.getProperty("arg"));
-			driverM = WebDriverManager.firefoxdriver().capabilities(fo).create();
-			driverM.get(pr.getProperty("Url"));
-			masterWinMax(driverM);
-			masterPageTitle(driverM);
-			masterImplyWait(driverM);
+
+			if (prM.getProperty("launchOpt").equals("WDM")) {
+
+				driverM = WebDriverManager.firefoxdriver().create();
+			} else
+				driverM = new FirefoxDriver();
+
+			driverM.get(prM.getProperty("url"));
+			break;
 
 		case "Chrome":
-			ChromeOptions co = new ChromeOptions();
-			co.setHeadless(false);
-			co.addArguments(pr.getProperty("arg"));
-			driverM = WebDriverManager.chromedriver().capabilities(co).create();
-			driverM.get(pr.getProperty("Url"));
-			masterWinMax(driverM);
-			masterPageTitle(driverM);
-			masterImplyWait(driverM);
+
+			if (prM.getProperty("launchOpt").equals("WDM")) {
+
+				driverM = WebDriverManager.chromedriver().create();
+			} else
+				driverM = new ChromeDriver();
+
+			driverM.get(prM.getProperty("url"));
+			break;
 
 		case "Edge":
-			EdgeOptions eo = new EdgeOptions();
-			eo.setHeadless(false);
-			eo.addArguments(pr.getProperty("arg"));
-			driverM = WebDriverManager.edgedriver().capabilities(eo).create();
-			driverM.get(pr.getProperty("Url"));
-			masterWinMax(driverM);
-			masterPageTitle(driverM);
-			masterImplyWait(driverM);
+
+			if (prM.getProperty("launchOpt").equals("WDM")) {
+
+				driverM = WebDriverManager.edgedriver().create();
+			} else
+				driverM = new EdgeDriver();
+
+			driverM.get(prM.getProperty("url"));
+			break;
 
 		default:
-			ChromeOptions co1 = new ChromeOptions();
-			co1.setHeadless(false);
-			co1.addArguments(pr.getProperty("arg"));
-			driverM = WebDriverManager.chromedriver().capabilities(co1).create();
-			driverM.get(pr.getProperty("Url"));
-			masterWinMax(driverM);
-			masterImplyWait(driverM);
+
+			if (prM.getProperty("launchOpt").equals("WDM")) {
+
+				driverM = WebDriverManager.chromedriver().create();
+			} else
+				driverM = new ChromeDriver();
+
+			driverM.get(prM.getProperty("url"));
 		}
+		masterWinMax(driverM);
+		masterPageTitle(driverM);
+		masterImplWait(driverM);
+
 		return driverM;
+	}
+
+	/* All Common Methods... */
+	String Common_Methods;
+
+	public Properties masterPropFileData() {
+
+		prM = new Properties();
+
+		try {
+
+			String fileDir = System.getProperty("user.dir");
+			File file = new File(fileDir + "/src/main/java/repository/inputDataFile.properties");
+			FileInputStream fis = new FileInputStream(file);
+			prM.load(fis);
+		} catch (IOException e) {
+
+			System.out.println(e.getMessage());
+			System.out.println(e.getCause());
+			e.printStackTrace();
+		}
+		return prM;
+	}
+
+	public void masterPause() {
+
+		try {
+
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void masterWinMax(WebDriver drive) {
@@ -91,12 +132,16 @@ public class MasterObjects {
 
 	public void masterPageTitle(WebDriver drive) {
 
-		drive.getTitle();
+		String title = drive.getTitle();
+		System.out.println("Page Title ==> " + title);
 	}
 
-	public void masterImplyWait(WebDriver drive) {
+	// Wait Methods...
+	String All_Wait_Methods;
 
-		drive.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	public void masterImplWait(WebDriver drive) {
+
+		drive.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 	}
 
 	public void masterVisibleWait(WebElement element) {
@@ -138,11 +183,21 @@ public class MasterObjects {
 
 	}
 
-	public String masterSS(WebDriver driver, String tsName) throws IOException {
+	public String masterSS(WebDriver driver, String tsName) {
 
-		String ssPath = System.getProperty("user.dir") + "\\demoQaScreenshot\\" + tsName + ".png";
-		File sShot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(sShot, new File(ssPath));
+		String ssPath = System.getProperty("user.dir") + "/demoQaScreenshot/" + tsName + ".png";
+
+		try {
+
+			File sShot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(sShot, new File(ssPath));
+
+		} catch (IOException e) {
+
+			System.out.println(e.getMessage());
+			System.out.println(e.getCause());
+			e.printStackTrace();
+		}
 		return ssPath;
 	}
 
@@ -161,5 +216,46 @@ public class MasterObjects {
 
 		JavascriptExecutor jse = (JavascriptExecutor) driverM;
 		jse.executeScript("arguments[0].click()");
+	}
+
+	public String masterWinHandles(WebDriver driveO, WebElement ele) {
+
+		String parentW = driveO.getWindowHandle();
+		System.out.println("Parent Window ==> " + parentW);
+
+		ele.click();
+		Set<String> allWin = driveO.getWindowHandles();
+		Iterator<String> itr = allWin.iterator();
+
+		while (itr.hasNext()) {
+
+			String childW = itr.next();
+
+			if (!childW.equals(parentW)) {
+
+				driveO.switchTo().window(childW);
+				System.out.println("Child Window ==> " + childW);
+				masterWinMax(driveO);
+				masterPageTitle(driveO);
+			}
+		}
+		return parentW;
+	}
+
+	public void masterAlertHandle(WebElement ele, boolean stat) {
+
+		ele.click();
+
+		Alert alert = driverM.switchTo().alert();
+
+		if (stat == true) {
+			masterPause();
+			alert.accept();
+
+			System.out.println("Alert Accepted...");
+		} else
+			masterPause();
+		alert.dismiss();
+		System.out.println("Alert dismissed...");
 	}
 }

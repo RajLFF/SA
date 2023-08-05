@@ -2,7 +2,7 @@ package mainDqaTestScript;
 
 import static org.testng.Assert.assertTrue;
 
-import java.io.IOException;
+import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
@@ -14,20 +14,21 @@ import testActions.TestOperations;
 public class DQAHomeTest extends TestOperations {
 
 	WebDriver driverT;
+	Properties prT;
 
-	public DQAHomeTest() {
+	DQAHomeTest() {
 
 		super();
 	}
 
 	@BeforeMethod
-	public void lanuchBrowser() throws IOException {
+	public void lanuchInstance() {
 
-		driverT = masterDriveInit();
+		driverT = launchBrowser();
+		prT = masterPropFileData();
 	}
 
 	@AfterMethod
-
 	public void closeInstance() {
 
 		if (driverT != null) {
@@ -36,11 +37,21 @@ public class DQAHomeTest extends TestOperations {
 		}
 	}
 
-	@Test(priority = 1, enabled = true)
+	/* All Test Cases... */
 
-	public void valiate_Drop_Functionality() {
+	@Test(priority = 1, enabled = true, groups = { "Func", "Regression", "Skip", "Non_Func" })
+	public void valiate_ClickOn_element() {
 
-		clickOn();
+		clickElements();
+		masterPause();
+		// SoftAssert sa = new SoftAssert();
 		assertTrue(true, "QA Home");
+	}
+
+	@Test(enabled = true, groups = { "Func", "Regression", "Skip", "Non_Func" })
+	public void validat_Text_Box() {
+
+		clickElements();
+		assertTrue(false, null);
 	}
 }

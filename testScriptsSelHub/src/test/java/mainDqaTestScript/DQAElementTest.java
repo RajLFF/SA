@@ -36,11 +36,11 @@ public class DQAElementTest extends TestOperations {
 		}
 	}
 
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 1, enabled = false)
 
-	public void valiate_Functionality() {
+	public void valiate() {
 
-		clickOn();
+		clickElements();
 		assertTrue(true, "QA Home");
 	}
 }

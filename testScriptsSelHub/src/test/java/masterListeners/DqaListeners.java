@@ -11,13 +11,38 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 
-import superPackage.MasterObjects;
+import superPackage.MasterMethods;
 
-public class DqaListeners extends MasterObjects implements ITestListener {
+public class DqaListeners extends MasterMethods implements ITestListener {
 
 	ExtentTest test;
 	ExtentReports reportL;
 	WebDriver driverL;
+
+	public void screenShotL(ITestResult result) {
+
+		String testName = result.getName();
+
+		try {
+
+			driverL = (WebDriver) result.getTestClass().getRealClass().getDeclaredField("driverT")
+					.get(result.getInstance());
+		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e1) {
+
+			System.out.println("Field not found...");
+			e1.printStackTrace();
+		}
+
+		try {
+
+			String screenshotPath = masterSS(driverL, testName);
+			test.addScreenCaptureFromPath(screenshotPath, testName);
+		} catch (Throwable e) {
+
+			e.printStackTrace();
+		}
+
+	}
 
 	@Override
 	public void onTestStart(ITestResult result) {
@@ -28,15 +53,17 @@ public class DqaListeners extends MasterObjects implements ITestListener {
 	@Override
 	public void onTestSuccess(ITestResult result) {
 
+		screenShotL(result);
 		System.out.println("Test Case Passed...");
-		test.log(Status.PASS, MarkupHelper.createLabel("Passed TCases ==> ", ExtentColor.GREEN));
+		test.log(Status.PASS, MarkupHelper.createLabel("Passed Test Cases ==> ", ExtentColor.GREEN));
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
 
+		screenShotL(result);
 		System.out.println("Test Case Failed...");
-		test.log(Status.FAIL, MarkupHelper.createLabel("Failed TCases ==> ", ExtentColor.RED));
+		test.log(Status.FAIL, MarkupHelper.createLabel("Failed Test Cases ==> ", ExtentColor.RED));
 		test.getClass();
 	}
 
@@ -44,7 +71,7 @@ public class DqaListeners extends MasterObjects implements ITestListener {
 	public void onTestSkipped(ITestResult result) {
 
 		System.out.println("Test Case Skipped...");
-		test.log(Status.SKIP, MarkupHelper.createLabel("Skipped Tcases ==> ", ExtentColor.CYAN));
+		test.log(Status.SKIP, MarkupHelper.createLabel("Skipped Test cases ==> ", ExtentColor.CYAN));
 	}
 
 	@Override

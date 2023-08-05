@@ -2,32 +2,64 @@ package testActions;
 
 import org.openqa.selenium.WebDriver;
 
+import pageObjects.DQAAlertFramePage;
+import pageObjects.DQABookStorePage;
+import pageObjects.DQAElementPage;
+import pageObjects.DQAFormPage;
 import pageObjects.DQAHomePage;
-import superPackage.MasterObjects;
+import pageObjects.DQAInteractPage;
+import pageObjects.DQAWidgetPage;
+import superPackage.MasterMethods;
 
-public class TestOperations extends MasterObjects {
+public class TestOperations extends MasterMethods {
 
 	WebDriver driverO;
-	DQAHomePage hm = new DQAHomePage(driverO);
+	DQAHomePage hm;
+	DQAAlertFramePage alr;
+	DQABookStorePage book;
+	DQAElementPage ep;
+	DQAInteractPage intr;
+	DQAWidgetPage wid;
+	DQAFormPage form;
 
-	public void clickOnInteracation() {
+	protected TestOperations() {
 
+		/*
+		 * String inst = ref;
+		 * 
+		 * switch (inst) {
+		 * 
+		 * case "alrt": alr = new DQAAlertFramePage(driverO); break;
+		 * 
+		 * case "bookR": book = new DQABookStorePage(driverO);
+		 * 
+		 * break; case "epR":
+		 * 
+		 * ep = new DQAElementPage(driverO);
+		 * 
+		 * break; case "intR": intr = new DQAInteractPage(driverO);
+		 * 
+		 * break; case "widR": wid = new DQAWidgetPage(driverO);
+		 * 
+		 * break; case "formR": form = new DQAFormPage(driverO);
+		 * 
+		 * break; default: hm = new DQAHomePage(driverO); break; }
+		 */
 	}
 
-	public void clickOnDropable() {
+	public WebDriver launchBrowser() {
 
+		return driverO = masterDriveInit();
 	}
 
-	public void clickOn() {
+	// All Home Page Methods
+	String DQ_Home_Page;
 
-		String title = driverO.getTitle();
-		System.out.println("Page Title ==> " + title);
-
+	public void clickElements() {
+		hm = new DQAHomePage(driverO);
+		hm.elements.click();
 	}
 
-	public void clickOnEl() {
-
-		String title = driverO.getTitle();
-		System.out.println("Page Title ==> " + title);
-	}
+	// All Home Element Page Methods
+	String DQ_Element_Page;
 }
