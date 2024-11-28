@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="8">Tendable_TestSuite</th></tr>
+<tr><td><a href="#t0">Tendable_TestCases</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">65,606</td><td></td><td></td></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Tendable_TestSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Tendable_TestCases &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">d_TestScriptsSuit.TendableHomeTest</td><td><a href="#m0">tc2_VerifyHomePageMenuOptionsAccessiblity</a></td><td rowspan="1">1732802481230</td><td rowspan="1">20059</td></tr><tr><th colspan="4">Tendable_TestCases &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">d_TestScriptsSuit.TendableHomeTest</td><td><a href="#m1">tc1_ValidateContactUsFunctionality</a></td><td rowspan="1">1732802507642</td><td rowspan="1">8715</td></tr><tr class="passedeven"><td><a href="#m2">tc3_validateBookDemoFuncOnAllPages</a></td><td rowspan="1">1732802521607</td><td rowspan="1">17094</td></tr></tbody>
+</table>
+<h2>Tendable_TestCases</h2><h3 id="m0">d_TestScriptsSuit.TendableHomeTest#tc2_VerifyHomePageMenuOptionsAccessiblity</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Found 7 accessibility violations:
+1) ARIA role must be appropriate for the element: https://dequeuniversity.com/rules/axe/3.1/aria-allowed-role?application=axeAPI
+  a) [&quot;iframe[name=\&quot;__uspapiLocator\&quot;]&quot;]
+    Fix any of the following:
+      role presentation  is not allowed for given element
+
+
+  b) [&quot;iframe[role=\&quot;presentation\&quot;][title=\&quot;Blank\&quot;]:nth-child(11)&quot;]
+    Fix any of the following:
+      role presentation  is not allowed for given element
+
+
+  c) [&quot;.go812842568&quot;]
+    Fix any of the following:
+      role dialog  is not allowed for given element
+
+
+2) Frames must have title attribute: https://dequeuniversity.com/rules/axe/3.1/frame-title?application=axeAPI
+  a) [&quot;.embedly-embed&quot;,&quot;#player&quot;]
+    Fix any of the following:
+      aria-label attribute does not exist or is empty
+      aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+      Element has no title attribute or the title attribute is empty
+      Element&apos;s default semantics were not overridden with role=&quot;presentation&quot;
+      Element&apos;s default semantics were not overridden with role=&quot;none&quot;
+
+
+3) Heading levels should only increase by one: https://dequeuniversity.com/rules/axe/3.1/heading-order?application=axeAPI
+  a) [&quot;.margin-small.margin-bottom &gt; h4&quot;]
+    Fix any of the following:
+      Heading order invalid
+
+
+  b) [&quot;.margin-small.margin-bottom:nth-child(1) &gt; h6&quot;]
+    Fix any of the following:
+      Heading order invalid
+
+
+  c) [&quot;#w-node-d74b4313-7818-1476-7c7f-5502e7a25694-e7a2567a &gt; .margin-xxsmall.margin-bottom &gt; h6&quot;]
+    Fix any of the following:
+      Heading order invalid
+
+
+  d) [&quot;.margin-xsmall.margin-bottom &gt; h4&quot;]
+    Fix any of the following:
+      Heading order invalid
+
+
+4) &lt;html&gt; element must have a lang attribute: https://dequeuniversity.com/rules/axe/3.1/html-has-lang?application=axeAPI
+  a) [&quot;.embedly-embed&quot;,&quot;html&quot;]
+    Fix any of the following:
+      The &lt;html&gt; element does not have a lang attribute
+
+
+5) Form elements must have labels: https://dequeuniversity.com/rules/axe/3.1/label?application=axeAPI
+  a) [&quot;#email-2&quot;]
+    Fix any of the following:
+      aria-label attribute does not exist or is empty
+      aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+      Form element does not have an implicit (wrapped) &lt;label&gt;
+      Form element does not have an explicit &lt;label&gt;
+      Element has no title attribute or the title attribute is empty
+
+
+6) Links must have discernible text: https://dequeuniversity.com/rules/axe/3.1/link-name?application=axeAPI
+  a) [&quot;#w-node-_59eca213-a5c3-eae8-cbb1-15703dcdb471-3dcdb46a&quot;]
+    Fix all of the following:
+      Element is in tab order and does not have accessible text
+
+    Fix any of the following:
+      Element does not have text that is visible to screen readers
+      aria-label attribute does not exist or is empty
+      aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+      Element&apos;s default semantics were not overridden with role=&quot;presentation&quot;
+      Element&apos;s default semantics were not overridden with role=&quot;none&quot;
+
+
+7) All page content must be contained by landmarks: https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI
+  a) [&quot;html&quot;]
+    Fix any of the following:
+      Some page content is not contained by landmarks
+
+ expected [true] but found [false]
+	at c_TestActions.TestOperations.checkAccessiblityViolation(TestOperations.java:187)
+	at d_TestScriptsSuit.TendableHomeTest.tc2_VerifyHomePageMenuOptionsAccessiblity(TendableHomeTest.java:54)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">d_TestScriptsSuit.TendableHomeTest#tc1_ValidateContactUsFunctionality</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">d_TestScriptsSuit.TendableHomeTest#tc3_validateBookDemoFuncOnAllPages</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>

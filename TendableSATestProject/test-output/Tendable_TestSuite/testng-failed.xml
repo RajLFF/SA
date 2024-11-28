@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Tendable_TestSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Tendable_TestCases(failed)">
+    <classes>
+      <class name="d_TestScriptsSuit.TendableHomeTest">
+        <methods>
+          <include name="initBrower"/>
+          <include name="closeBrowser"/>
+          <include name="tc2_VerifyHomePageMenuOptionsAccessiblity"/>
+        </methods>
+      </class> <!-- d_TestScriptsSuit.TendableHomeTest -->
+    </classes>
+  </test> <!-- Tendable_TestCases(failed) -->
+</suite> <!-- Failed suite [Tendable_TestSuite] -->

@@ -1,6 +1,7 @@
 package testActions;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import pageObjects.DQAAlertFramePage;
 import pageObjects.DQABookStorePage;
@@ -14,6 +15,7 @@ import superPackage.MasterMethods;
 public class TestOperations extends MasterMethods {
 
 	WebDriver driverO;
+	private WebElement ele;
 	DQAHomePage hm;
 	DQAAlertFramePage alr;
 	DQABookStorePage book;
@@ -22,44 +24,31 @@ public class TestOperations extends MasterMethods {
 	DQAWidgetPage wid;
 	DQAFormPage form;
 
-	protected TestOperations() {
-
-		/*
-		 * String inst = ref;
-		 * 
-		 * switch (inst) {
-		 * 
-		 * case "alrt": alr = new DQAAlertFramePage(driverO); break;
-		 * 
-		 * case "bookR": book = new DQABookStorePage(driverO);
-		 * 
-		 * break; case "epR":
-		 * 
-		 * ep = new DQAElementPage(driverO);
-		 * 
-		 * break; case "intR": intr = new DQAInteractPage(driverO);
-		 * 
-		 * break; case "widR": wid = new DQAWidgetPage(driverO);
-		 * 
-		 * break; case "formR": form = new DQAFormPage(driverO);
-		 * 
-		 * break; default: hm = new DQAHomePage(driverO); break; }
-		 */
-	}
-
 	public WebDriver launchBrowser() {
 
+		hm = new DQAHomePage(driverO);
+		wid = new DQAWidgetPage(driverO);
+
 		return driverO = masterDriveInit();
+
 	}
 
 	// All Home Page Methods
 	String DQ_Home_Page;
 
 	public void clickElements() {
-		hm = new DQAHomePage(driverO);
-		hm.elements.click();
+
+		ele = hm.elements;
+		masterMovTo(ele);
+		ele.click();
 	}
 
-	// All Home Element Page Methods
-	String DQ_Element_Page;
+	// All Home Widget Page Methods
+	String DQ_Widger_Page;
+
+	public void clickOnWidget() {
+
+		hm.widgets.click();
+	}
+
 }

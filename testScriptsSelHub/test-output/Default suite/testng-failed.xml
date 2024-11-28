@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="demoTestCases.DemoQATest">
+      <class name="mainDqaTestScript.DQAHomeTest">
         <methods>
-          <include name="lanuchBrowser"/>
+          <include name="lanuchInstance"/>
+          <include name="valiate_ClickOn_element"/>
           <include name="closeInstance"/>
-          <include name="valiateDropFunctionality"/>
         </methods>
-      </class> <!-- demoTestCases.DemoQATest -->
+      </class> <!-- mainDqaTestScript.DQAHomeTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

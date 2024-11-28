@@ -29,27 +29,31 @@ public class MasterReports {
 		}
 	}
 
-	public static void main(String[] args) throws IOException {
+	public static ExtentReports getDqaReport() {
 
 		fileData();
 
-		ExtentReports masterReport = new ExtentReports();
+		ExtentReports dqaReport = new ExtentReports();
 
-		File fileReport = new File("./Reports/Demo_QA_Report.html");
-
+		File reportPath = new File("./Reports/Demo_QA_Report.html");
 		System.out.println("File Data ==> " + prR.getProperty("os"));
 
-		ExtentSparkReporter sparkReport = new ExtentSparkReporter(fileReport);
+		// Creating Report & Config.
+		ExtentSparkReporter sparkReport = new ExtentSparkReporter(reportPath);
+		sparkReport.config().setReportName("DQA Test Summary Report");
+		sparkReport.config().setDocumentTitle("Main DQA Document");
+		dqaReport.attachReporter(sparkReport); // Attached report
 
-		masterReport.attachReporter(sparkReport); // Attached report
-
-		masterReport.setSystemInfo("Executed By...", prR.getProperty("executeBy"));
-		masterReport.setSystemInfo("Framework Designed By ==> ", prR.getProperty("developeBy"));
-		masterReport.setSystemInfo("Executed O.S ==> ", prR.getProperty("os"));
+		// Setting Information
+		dqaReport.setSystemInfo("Test Cases Executed By...", "Raj Chavan");
+		dqaReport.setSystemInfo("Framework Design & Develope By ==> ", prR.getProperty("developeBy"));
+		dqaReport.setSystemInfo("Executed O.S ==> ", prR.getProperty("os"));
+		dqaReport.setSystemInfo("Executed Browser ==> ", prR.getProperty("browser"));
 
 		/*
 		 * masterReport.flush(); Desktop.getDesktop().browse(new
 		 * File("fileReport").toURI());
 		 */
+		return dqaReport;
 	}
 }

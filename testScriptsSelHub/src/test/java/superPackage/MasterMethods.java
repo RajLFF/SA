@@ -3,7 +3,10 @@ package superPackage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.Properties;
 import java.util.Set;
@@ -16,9 +19,11 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.ScreenshotException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -56,13 +61,20 @@ public class MasterMethods {
 
 		case "Chrome":
 
+			ChromeOptions co = new ChromeOptions();
+			// String dpath = SeleniumManager.getInstance().getDriverPath(co,
+			// true).driverPath;
+			// System.out.println("Driver Path ===> " + dpath);
+			// co.setBrowserVersion("115");
+			// co.addArguments("--headless");
+			// co.setBinary(prM.getProperty("cftPath")); // To run in dedicated CfT
+			// browser...
+
 			if (prM.getProperty("launchOpt").equals("WDM")) {
 
-				driverM = WebDriverManager.chromedriver().create();
+				driverM = WebDriverManager.chromedriver().capabilities(co).create();
 			} else
-				driverM = new ChromeDriver();
-
-			driverM.get(prM.getProperty("url"));
+				driverM = new ChromeDriver(co);
 			break;
 
 		case "Edge":
@@ -72,8 +84,6 @@ public class MasterMethods {
 				driverM = WebDriverManager.edgedriver().create();
 			} else
 				driverM = new EdgeDriver();
-
-			driverM.get(prM.getProperty("url"));
 			break;
 
 		default:
@@ -83,10 +93,9 @@ public class MasterMethods {
 				driverM = WebDriverManager.chromedriver().create();
 			} else
 				driverM = new ChromeDriver();
-
-			driverM.get(prM.getProperty("url"));
 		}
 		masterWinMax(driverM);
+		driverM.get(prM.getProperty("url"));
 		masterPageTitle(driverM);
 		masterImplWait(driverM);
 
@@ -106,11 +115,12 @@ public class MasterMethods {
 			File file = new File(fileDir + "/src/main/java/repository/inputDataFile.properties");
 			FileInputStream fis = new FileInputStream(file);
 			prM.load(fis);
-		} catch (IOException e) {
+		}
+
+		catch (IOException e) {
 
 			System.out.println(e.getMessage());
 			System.out.println(e.getCause());
-			e.printStackTrace();
 		}
 		return prM;
 	}
@@ -120,7 +130,11 @@ public class MasterMethods {
 		try {
 
 			Thread.sleep(3000);
-		} catch (InterruptedException e) {
+		}
+
+		catch (InterruptedException e) {
+			System.out.println(e.getMessage());
+			System.out.println(e.getCause());
 			e.printStackTrace();
 		}
 	}
@@ -179,31 +193,78 @@ public class MasterMethods {
 		act.contextClick(element).perform();
 	}
 
-	public void masterAlert(WebElement element) {
+	public void masterAlert(WebElement element, String alertInput) {
 
+		element.click();
+		Alert eleAlert = driverM.switchTo().alert();
+		System.out.println("Alert handle ==> " + eleAlert);
+
+		switch (alertInput) {
+
+		case "Accept":
+			eleAlert.accept();
+			break;
+
+		case "Dismiss":
+			eleAlert.dismiss();
+			break;
+
+		case "GetText":
+			eleAlert.getText();
+			break;
+
+		case "InputText":
+			eleAlert.sendKeys(prM.getProperty("alertText"));
+			break;
+
+		default:
+			eleAlert.accept();
+			break;
+		}
 	}
 
 	public String masterSS(WebDriver driver, String tsName) {
 
-		String ssPath = System.getProperty("user.dir") + "/demoQaScreenshot/" + tsName + ".png";
-
+		String ssPath = null;
 		try {
 
+			ssPath = System.getProperty("user.dir") + "/demoQaScreenshot/" + tsName + ".png";
 			File sShot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(sShot, new File(ssPath));
+		}
 
-		} catch (IOException e) {
+		catch (IOException | ScreenshotException e) {
 
+			System.err.println("Screenshot can not be capture...");
 			System.out.println(e.getMessage());
-			System.out.println(e.getCause());
-			e.printStackTrace();
+			System.err.println(e.getCause());
 		}
 		return ssPath;
 	}
 
-	public void masterDropD(WebElement element) {
+	public void masterDropD(WebElement element, String key) {
+
 		Select sel = new Select(element);
-		sel.selectByIndex(0);
+
+		switch (key) {
+
+		case "Index":
+			int index = Integer.parseInt(prM.getProperty("drpDwnIndx"));
+			sel.selectByIndex(index);
+			break;
+
+		case "Value":
+			sel.selectByValue(prM.getProperty("drpDwnValue"));
+			break;
+
+		case "Text":
+			sel.selectByVisibleText(prM.getProperty("drpDwnTxt"));
+			break;
+
+		default:
+			sel.selectByVisibleText(prM.getProperty("drpDwnTxt"));
+			break;
+		}
 	}
 
 	public void masterJseScroll() {
@@ -239,6 +300,7 @@ public class MasterMethods {
 				masterPageTitle(driveO);
 			}
 		}
+		// driveO.switchTo().defaultContent();
 		return parentW;
 	}
 
@@ -258,4 +320,48 @@ public class MasterMethods {
 		alert.dismiss();
 		System.out.println("Alert dismissed...");
 	}
+
+	public void masterFrameSwitch(WebDriver driveM, String key, WebElement ele) {
+
+		switch (key) {
+		case "Name":
+			driveM.switchTo().frame(prM.getProperty("frameName"));
+			break;
+
+		case "Index":
+			driveM.switchTo().frame(prM.getProperty("frameIndex"));
+			break;
+
+		case "Element":
+			driveM.switchTo().frame(ele);
+			break;
+
+		case "ParentFrame":
+			driveM.switchTo().parentFrame();
+			break;
+
+		default:
+			driveM.switchTo().defaultContent();
+			break;
+		}
+	}
+
+	public void masterDatePicker(WebElement calDate) {
+
+		String date = prM.getProperty("userDate");
+		SimpleDateFormat dateformat = new SimpleDateFormat("dd-MMM-yyyy");
+		dateformat.setLenient(false);
+
+		try {
+
+			Date parsedDate = dateformat.parse(date);
+		}
+
+		catch (ParseException e) {
+			System.out.println(e.getMessage());
+			System.out.println(e.getCause());
+			e.printStackTrace();
+		}
+	}
+
 }

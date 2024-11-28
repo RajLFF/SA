@@ -1,0 +1,307 @@
+<html>
+<head>
+<title>TestNG:  Tendable_TestCases</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Tendable_TestCases</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Nov 28 19:31:13 IST 2024</td>
+</tr>
+<tr><td>Total time:</td><td>65 seconds (65606 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='d_TestScriptsSuit.TendableHomeTest.tc2_VerifyHomePageMenuOptionsAccessiblity()'><b>tc2_VerifyHomePageMenuOptionsAccessiblity</b><br>Test class: d_TestScriptsSuit.TendableHomeTest</td>
+<td><div><pre>java.lang.AssertionError: Found 7 accessibility violations:
+1) ARIA role must be appropriate for the element: https://dequeuniversity.com/rules/axe/3.1/aria-allowed-role?application=axeAPI
+  a) [&quot;iframe[name=\&quot;__uspapiLocator\&quot;]&quot;]
+    Fix any of the following:
+      role presentation  is not allowed for given element
+
+
+  b) [&quot;iframe[role=\&quot;presentation\&quot;][title=\&quot;Blank\&quot;]:nth-child(11)&quot;]
+    Fix any of the following:
+      role presentation  is not allowed for given element
+
+
+  c) [&quot;.go812842568&quot;]
+    Fix any of the following:
+      role dialog  is not allowed for given element
+
+
+2) Frames must have title attribute: https://dequeuniversity.com/rules/axe/3.1/frame-title?application=axeAPI
+  a) [&quot;.embedly-embed&quot;,&quot;#player&quot;]
+    Fix any of the following:
+      aria-label attribute does not exist or is empty
+      aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+      Element has no title attribute or the title attribute is empty
+      Element&apos;s default semantics were not overridden with role=&quot;presentation&quot;
+      Element&apos;s default semantics were not overridden with role=&quot;none&quot;
+
+
+3) Heading levels should only increase by one: https://dequeuniversity.com/rules/axe/3.1/heading-order?application=axeAPI
+  a) [&quot;.margin-small.margin-bottom &gt; h4&quot;]
+    Fix any of the following:
+      Heading order invalid
+
+
+  b) [&quot;.margin-small.margin-bottom:nth-child(1) &gt; h6&quot;]
+    Fix any of the following:
+      Heading order invalid
+
+
+  c) [&quot;#w-node-d74b4313-7818-1476-7c7f-5502e7a25694-e7a2567a &gt; .margin-xxsmall.margin-bottom &gt; h6&quot;]
+    Fix any of the following:
+      Heading order invalid
+
+
+  d) [&quot;.margin-xsmall.margin-bottom &gt; h4&quot;]
+    Fix any of the following:
+      Heading order invalid
+
+
+4) &lt;html&gt; element must have a lang attribute: https://dequeuniversity.com/rules/axe/3.1/html-has-lang?application=axeAPI
+  a) [&quot;.embedly-embed&quot;,&quot;html&quot;]
+    Fix any of the following:
+      The &lt;html&gt; element does not have a lang attribute
+
+
+5) Form elements must have labels: https://dequeuniversity.com/rules/axe/3.1/label?application=axeAPI
+  a) [&quot;#email-2&quot;]
+    Fix any of the following:
+      aria-label attribute does not exist or is empty
+      aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+      Form element does not have an implicit (wrapped) &lt;label&gt;
+      Form element does not have an explicit &lt;label&gt;
+      Element has no title attribute or the title attribute is empty
+
+
+6) Links must have discernible text: https://dequeuniversity.com/rules/axe/3.1/link-name?application=axeAPI
+  a) [&quot;#w-node-_59eca213-a5c3-eae8-cbb1-15703dcdb471-3dcdb46a&quot;]
+    Fix all of the following:
+      Element is in tab order and does not have accessible text
+
+    Fix any of the following:
+      Element does not have text that is visible to screen readers
+      aria-label attribute does not exist or is empty
+      aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+      Element&apos;s default semantics were not overridden with role=&quot;presentation&quot;
+      Element&apos;s default semantics were not overridden with role=&quot;none&quot;
+
+
+7) All page content must be contained by landmarks: https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI
+  a) [&quot;html&quot;]
+    Fix any of the following:
+      Some page content is not contained by landmarks
+
+ expected [true] but found [false]
+	at c_TestActions.TestOperations.checkAccessiblityViolation(TestOperations.java:187)
+	at d_TestScriptsSuit.TendableHomeTest.tc2_VerifyHomePageMenuOptionsAccessiblity(TendableHomeTest.java:54)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1160546880", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1160546880'><pre>java.lang.AssertionError: Found 7 accessibility violations:
+1) ARIA role must be appropriate for the element: https://dequeuniversity.com/rules/axe/3.1/aria-allowed-role?application=axeAPI
+  a) [&quot;iframe[name=\&quot;__uspapiLocator\&quot;]&quot;]
+    Fix any of the following:
+      role presentation  is not allowed for given element
+
+
+  b) [&quot;iframe[role=\&quot;presentation\&quot;][title=\&quot;Blank\&quot;]:nth-child(11)&quot;]
+    Fix any of the following:
+      role presentation  is not allowed for given element
+
+
+  c) [&quot;.go812842568&quot;]
+    Fix any of the following:
+      role dialog  is not allowed for given element
+
+
+2) Frames must have title attribute: https://dequeuniversity.com/rules/axe/3.1/frame-title?application=axeAPI
+  a) [&quot;.embedly-embed&quot;,&quot;#player&quot;]
+    Fix any of the following:
+      aria-label attribute does not exist or is empty
+      aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+      Element has no title attribute or the title attribute is empty
+      Element&apos;s default semantics were not overridden with role=&quot;presentation&quot;
+      Element&apos;s default semantics were not overridden with role=&quot;none&quot;
+
+
+3) Heading levels should only increase by one: https://dequeuniversity.com/rules/axe/3.1/heading-order?application=axeAPI
+  a) [&quot;.margin-small.margin-bottom &gt; h4&quot;]
+    Fix any of the following:
+      Heading order invalid
+
+
+  b) [&quot;.margin-small.margin-bottom:nth-child(1) &gt; h6&quot;]
+    Fix any of the following:
+      Heading order invalid
+
+
+  c) [&quot;#w-node-d74b4313-7818-1476-7c7f-5502e7a25694-e7a2567a &gt; .margin-xxsmall.margin-bottom &gt; h6&quot;]
+    Fix any of the following:
+      Heading order invalid
+
+
+  d) [&quot;.margin-xsmall.margin-bottom &gt; h4&quot;]
+    Fix any of the following:
+      Heading order invalid
+
+
+4) &lt;html&gt; element must have a lang attribute: https://dequeuniversity.com/rules/axe/3.1/html-has-lang?application=axeAPI
+  a) [&quot;.embedly-embed&quot;,&quot;html&quot;]
+    Fix any of the following:
+      The &lt;html&gt; element does not have a lang attribute
+
+
+5) Form elements must have labels: https://dequeuniversity.com/rules/axe/3.1/label?application=axeAPI
+  a) [&quot;#email-2&quot;]
+    Fix any of the following:
+      aria-label attribute does not exist or is empty
+      aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+      Form element does not have an implicit (wrapped) &lt;label&gt;
+      Form element does not have an explicit &lt;label&gt;
+      Element has no title attribute or the title attribute is empty
+
+
+6) Links must have discernible text: https://dequeuniversity.com/rules/axe/3.1/link-name?application=axeAPI
+  a) [&quot;#w-node-_59eca213-a5c3-eae8-cbb1-15703dcdb471-3dcdb46a&quot;]
+    Fix all of the following:
+      Element is in tab order and does not have accessible text
+
+    Fix any of the following:
+      Element does not have text that is visible to screen readers
+      aria-label attribute does not exist or is empty
+      aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+      Element&apos;s default semantics were not overridden with role=&quot;presentation&quot;
+      Element&apos;s default semantics were not overridden with role=&quot;none&quot;
+
+
+7) All page content must be contained by landmarks: https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI
+  a) [&quot;html&quot;]
+    Fix any of the following:
+      Some page content is not contained by landmarks
+
+ expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at c_TestActions.TestOperations.checkAccessiblityViolation(TestOperations.java:187)
+	at d_TestScriptsSuit.TendableHomeTest.tc2_VerifyHomePageMenuOptionsAccessiblity(TendableHomeTest.java:54)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>20</td>
+<td>d_TestScriptsSuit.TendableHomeTest@7ce026d3</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='d_TestScriptsSuit.TendableHomeTest.tc3_validateBookDemoFuncOnAllPages()'><b>tc3_validateBookDemoFuncOnAllPages</b><br>Test class: d_TestScriptsSuit.TendableHomeTest</td>
+<td></td>
+<td>17</td>
+<td>d_TestScriptsSuit.TendableHomeTest@7ce026d3</td></tr>
+<tr>
+<td title='d_TestScriptsSuit.TendableHomeTest.tc1_ValidateContactUsFunctionality()'><b>tc1_ValidateContactUsFunctionality</b><br>Test class: d_TestScriptsSuit.TendableHomeTest</td>
+<td></td>
+<td>8</td>
+<td>d_TestScriptsSuit.TendableHomeTest@7ce026d3</td></tr>
+</table><p>
+</body>
+</html>

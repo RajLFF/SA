@@ -20,10 +20,10 @@ public class DQAHomePage {
 	@FindBy(xpath = ("//img[@alt='Selenium Online Training']"))
 	public WebElement joinNow;
 
-	@FindBy(xpath = ("//span[@class=\"text\" and text()='Droppable']"))
-	public WebElement homeText;
+	@FindBy(xpath = ("[src=\"/images/Toolsqa.jpg\"]"))
+	public WebElement toolQAText;
 
-	@FindBy(css = ("img[title='Ad.Plus Advertising']"))
+	@FindBy(css = ("img[title='Ad.Plus Advertising']")) // xpath = *[local-name()='svg' and @viewBox='0 0 448 512']
 	public WebElement elements;
 
 	@FindBy(xpath = (""))
@@ -32,8 +32,8 @@ public class DQAHomePage {
 	@FindBy(xpath = (""))
 	public WebElement alertFrame;
 
-	@FindBy(xpath = (""))
-	public WebElement wodgets;
+	@FindBy(xpath = ("//h5[normalize-space()='Widgets']"))
+	public WebElement widgets;
 
 	@FindBy(xpath = (""))
 	public WebElement interaction;

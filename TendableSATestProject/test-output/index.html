@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Tendable_TestSuite" class="navigator-link">
+              <span class="suite-name border-failed">Tendable_TestSuite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Tendable_TestSuite" class="navigator-link ">
+                    <span>D:\SeleniumCode\TendableSATestProject\TendableTestNGRunner.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Tendable_TestSuite" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Tendable_TestSuite" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Tendable_TestSuite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Tendable_TestSuite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Tendable_TestSuite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Tendable_TestSuite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Tendable_TestSuite" class="hide-methods failed suite-Tendable_TestSuite"> (hide)</a> <!-- hide-methods failed suite-Tendable_TestSuite -->
+                      <a href="#" panel-name="suite-Tendable_TestSuite" class="show-methods failed suite-Tendable_TestSuite"> (show)</a> <!-- show-methods failed suite-Tendable_TestSuite -->
+                    </span>
+                    <div class="method-list-content failed suite-Tendable_TestSuite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Tendable_TestSuite" title="d_TestScriptsSuit.TendableHomeTest" class="method navigator-link" hash-for-method="tc2_VerifyHomePageMenuOptionsAccessiblity">tc2_VerifyHomePageMenuOptionsAccessiblity</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Tendable_TestSuite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Tendable_TestSuite" class="hide-methods passed suite-Tendable_TestSuite"> (hide)</a> <!-- hide-methods passed suite-Tendable_TestSuite -->
+                      <a href="#" panel-name="suite-Tendable_TestSuite" class="show-methods passed suite-Tendable_TestSuite"> (show)</a> <!-- show-methods passed suite-Tendable_TestSuite -->
+                    </span>
+                    <div class="method-list-content passed suite-Tendable_TestSuite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Tendable_TestSuite" title="d_TestScriptsSuit.TendableHomeTest" class="method navigator-link" hash-for-method="tc1_ValidateContactUsFunctionality">tc1_ValidateContactUsFunctionality</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Tendable_TestSuite" title="d_TestScriptsSuit.TendableHomeTest" class="method navigator-link" hash-for-method="tc3_validateBookDemoFuncOnAllPages">tc3_validateBookDemoFuncOnAllPages</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Tendable_TestSuite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Tendable_TestSuite" class="panel Tendable_TestSuite">
+          <div class="suite-Tendable_TestSuite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">d_TestScriptsSuit.TendableHomeTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc2_VerifyHomePageMenuOptionsAccessiblity">
+                  </a> <!-- tc2_VerifyHomePageMenuOptionsAccessiblity -->
+                  <span class="method-name">tc2_VerifyHomePageMenuOptionsAccessiblity</span>
+                  <div class="stack-trace">java.lang.AssertionError: Found 7 accessibility violations:
+1) ARIA role must be appropriate for the element: https://dequeuniversity.com/rules/axe/3.1/aria-allowed-role?application=axeAPI
+  a) [&quot;iframe[name=\&quot;__uspapiLocator\&quot;]&quot;]
+    Fix any of the following:
+      role presentation  is not allowed for given element
+
+
+  b) [&quot;iframe[role=\&quot;presentation\&quot;][title=\&quot;Blank\&quot;]:nth-child(11)&quot;]
+    Fix any of the following:
+      role presentation  is not allowed for given element
+
+
+  c) [&quot;.go812842568&quot;]
+    Fix any of the following:
+      role dialog  is not allowed for given element
+
+
+2) Frames must have title attribute: https://dequeuniversity.com/rules/axe/3.1/frame-title?application=axeAPI
+  a) [&quot;.embedly-embed&quot;,&quot;#player&quot;]
+    Fix any of the following:
+      aria-label attribute does not exist or is empty
+      aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+      Element has no title attribute or the title attribute is empty
+      Element&apos;s default semantics were not overridden with role=&quot;presentation&quot;
+      Element&apos;s default semantics were not overridden with role=&quot;none&quot;
+
+
+3) Heading levels should only increase by one: https://dequeuniversity.com/rules/axe/3.1/heading-order?application=axeAPI
+  a) [&quot;.margin-small.margin-bottom &gt; h4&quot;]
+    Fix any of the following:
+      Heading order invalid
+
+
+  b) [&quot;.margin-small.margin-bottom:nth-child(1) &gt; h6&quot;]
+    Fix any of the following:
+      Heading order invalid
+
+
+  c) [&quot;#w-node-d74b4313-7818-1476-7c7f-5502e7a25694-e7a2567a &gt; .margin-xxsmall.margin-bottom &gt; h6&quot;]
+    Fix any of the following:
+      Heading order invalid
+
+
+  d) [&quot;.margin-xsmall.margin-bottom &gt; h4&quot;]
+    Fix any of the following:
+      Heading order invalid
+
+
+4) &lt;html&gt; element must have a lang attribute: https://dequeuniversity.com/rules/axe/3.1/html-has-lang?application=axeAPI
+  a) [&quot;.embedly-embed&quot;,&quot;html&quot;]
+    Fix any of the following:
+      The &lt;html&gt; element does not have a lang attribute
+
+
+5) Form elements must have labels: https://dequeuniversity.com/rules/axe/3.1/label?application=axeAPI
+  a) [&quot;#email-2&quot;]
+    Fix any of the following:
+      aria-label attribute does not exist or is empty
+      aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+      Form element does not have an implicit (wrapped) &lt;label&gt;
+      Form element does not have an explicit &lt;label&gt;
+      Element has no title attribute or the title attribute is empty
+
+
+6) Links must have discernible text: https://dequeuniversity.com/rules/axe/3.1/link-name?application=axeAPI
+  a) [&quot;#w-node-_59eca213-a5c3-eae8-cbb1-15703dcdb471-3dcdb46a&quot;]
+    Fix all of the following:
+      Element is in tab order and does not have accessible text
+
+    Fix any of the following:
+      Element does not have text that is visible to screen readers
+      aria-label attribute does not exist or is empty
+      aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+      Element&apos;s default semantics were not overridden with role=&quot;presentation&quot;
+      Element&apos;s default semantics were not overridden with role=&quot;none&quot;
+
+
+7) All page content must be contained by landmarks: https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI
+  a) [&quot;html&quot;]
+    Fix any of the following:
+      Some page content is not contained by landmarks
+
+ expected [true] but found [false]
+	at c_TestActions.TestOperations.checkAccessiblityViolation(TestOperations.java:187)
+	at d_TestScriptsSuit.TendableHomeTest.tc2_VerifyHomePageMenuOptionsAccessiblity(TendableHomeTest.java:54)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Tendable_TestSuite-class-failed -->
+          <div class="suite-Tendable_TestSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">d_TestScriptsSuit.TendableHomeTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc1_ValidateContactUsFunctionality">
+                  </a> <!-- tc1_ValidateContactUsFunctionality -->
+                  <span class="method-name">tc1_ValidateContactUsFunctionality</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc3_validateBookDemoFuncOnAllPages">
+                  </a> <!-- tc3_validateBookDemoFuncOnAllPages -->
+                  <span class="method-name">tc3_validateBookDemoFuncOnAllPages</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Tendable_TestSuite-class-passed -->
+        </div> <!-- panel Tendable_TestSuite -->
+        <div panel-name="test-xml-Tendable_TestSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">D:\SeleniumCode\TendableSATestProject\TendableTestNGRunner.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Tendable_TestSuite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Tendable_TestCases&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;d_TestScriptsSuit.TendableHomeTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Tendable_TestCases --&gt;
+&lt;/suite&gt; &lt;!-- Tendable_TestSuite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Tendable_TestSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Tendable_TestSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Tendable_TestCases (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Tendable_TestSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Tendable_TestSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Tendable_TestSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Tendable_TestSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Tendable_TestSuite');
+function tableData_Tendable_TestSuite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(3);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'tc2_VerifyHomePageMenuOptionsAccessiblity')
+data.setCell(0, 2, 'd_TestScriptsSuit.TendableHomeTest')
+data.setCell(0, 3, 20059);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'tc3_validateBookDemoFuncOnAllPages')
+data.setCell(1, 2, 'd_TestScriptsSuit.TendableHomeTest')
+data.setCell(1, 3, 17094);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'tc1_ValidateContactUsFunctionality')
+data.setCell(2, 2, 'd_TestScriptsSuit.TendableHomeTest')
+data.setCell(2, 3, 8715);
+window.suiteTableData['Tendable_TestSuite']= { tableData: data, tableDiv: 'times-div-Tendable_TestSuite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 45 seconds</span>
+              <div id="times-div-Tendable_TestSuite">
+              </div> <!-- times-div-Tendable_TestSuite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Tendable_TestSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Tendable_TestSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Tendable_TestSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Tendable_TestSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">d_TestScriptsSuit.TendableHomeTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">initBrower</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">tc2_VerifyHomePageMenuOptionsAccessiblity</span>
+                <span class="method-start">7284 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">27347 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">initBrower</span>
+                <span class="method-start">28142 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">tc1_ValidateContactUsFunctionality</span>
+                <span class="method-start">33696 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">42412 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">initBrower</span>
+                <span class="method-start">43150 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">tc3_validateBookDemoFuncOnAllPages</span>
+                <span class="method-start">47661 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">64755 ms</span>
+              </div> <!-- configuration-method after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

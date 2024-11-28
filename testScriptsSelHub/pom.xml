@@ -3,10 +3,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>MasterTestFramework</groupId>
-	<artifactId>MasterTestScripts</artifactId>
+	<groupId>MasterTestFrameworks</groupId>
+	<artifactId>MasterTestScript</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>testScripts</name>
+
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
 
@@ -15,47 +16,99 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
-
 	</properties>
 
 	<dependencies>
 
-		<!-- Selenium-Java 4.11.0 Stable-->
+		<!-- Jsoup -->
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.17.2</version>
+		</dependency>
+
+		<!-- Selenium-Java 4.11.0 Stable -->
+		<!-- <dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.12.1</version>
+		</dependency> -->
+
+		<!-- Selenium 4.19 -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.11.0</version>
+			<version>4.19.1</version>
 		</dependency>
 
-		<!-- testng -->
+		<!-- TheWaiter-->
+		<dependency>
+			<groupId>com.imalittletester</groupId>
+			<artifactId>thewaiter</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<!-- Apache POI & OOXML-->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>5.2.3</version>
+		</dependency>
+
+		<!--dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>5.2.3</version>
+		</dependency!-->
+
+		<!-- TestNG 7.8 -->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>7.7.1</version>
-			<scope>compile</scope>
+			<version>7.8.0</version>
+			<scope>test</scope>
 		</dependency>
 
-		<!-- Extentreport -->
+		<!-- Extent Report -->
 		<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
-			<version>5.0.9</version>
+			<version>5.1.1</version>
 		</dependency>
 
-		<!-- Webdrivermanager -->
+		<!-- Apache Log4J Core -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.20.0</version>
+		</dependency>
+
+		<!-- Apache Log4J Core-->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.20.0</version>
+		</dependency>
+
+		<!-- Web Driver Manager -->
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
 			<version>5.3.3</version>
 		</dependency>
 
+		<!-- Selenium 4.4.0 >
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.4.0</version>
+		</dependency -->
 	</dependencies>
 
 	<build>
 
 		<pluginManagement>
 
-			<!-- plugins versions to avoid using Maven defaults -->
 			<plugins>
 
 				<!-- Clean Lifecycle -->
@@ -105,11 +158,7 @@
 					<artifactId>maven-project-info-reports-plugin</artifactId>
 					<version>3.0.0</version>
 				</plugin>
-
 			</plugins>
-
 		</pluginManagement>
-
 	</build>
-
 </project>
