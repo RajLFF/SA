@@ -60,7 +60,7 @@ public class TendableHomeTest extends TestOperations {
 
 		boolean status = verifyEachPageBookDemoFunc();
 		System.out
-				.println("Apart from Request Demo, this Test Case cover functionality of all top level menus also...");
+				.println("Apart from Request Demo, this Test Case cover functionality of all top level menus also.");
 		assertTrue(status == true, "Test Case passed...");
 	}
 

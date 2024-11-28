@@ -184,7 +184,7 @@ public class TestOperations extends TendableMasterMethodPage {
 		else {
 
 			AXE.writeResults("Tendable App Acesibliities Testing Violations Report ==>", jsonResponse);
-			assertTrue(false, AXE.report(violationRule)); // Assert report
+			assertTrue(false, AXE.report(violationRule)); // Assert report created
 		}
 	}
 

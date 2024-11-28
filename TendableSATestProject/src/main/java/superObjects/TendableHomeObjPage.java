@@ -61,5 +61,5 @@ public class TendableHomeObjPage {
 	public WebElement contentHub;
 
 	@FindBy(xpath = "//a[normalize-space()='Content Hub' and @class='navbar7_link w-nav-link']")
-	public WebElement contact;
+	public WebElement contacts;
 }

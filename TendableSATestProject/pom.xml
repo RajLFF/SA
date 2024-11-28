@@ -12,7 +12,7 @@
 
 	<dependencies>
 
-		<!-- https://mvnrepository.com/artifact/com.deque/axe-selenium -->
+		<!-- https://mvnrepository.com/artifact/com.deque/axe-selenium.. -->
 		<dependency>
 			<groupId>com.deque</groupId>
 			<artifactId>axe-selenium</artifactId>

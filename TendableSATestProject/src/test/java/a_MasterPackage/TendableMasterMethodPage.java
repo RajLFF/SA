@@ -137,5 +137,4 @@ public class TendableMasterMethodPage {
 			System.out.println(e.getMessage());
 		}
 	}
-
 }
